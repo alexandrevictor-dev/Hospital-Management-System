@@ -4,7 +4,6 @@ from ui.cli import show_main_menu, get_menu_choice, clear_screen #importa funç�
 def main():
 #Estamos definindo o menu ao invés de escrever na raiz pois assim as variáveis não são criadas para todo o código.
 #é como se estivesse sido criado dentro de uma caixa segura, isso evita conflitos e bugs difíceis de achar.
-
     while True:
         show_main_menu()
         try: #é como se dissesse 'tente rodar o código normalmente'.
