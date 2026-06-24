@@ -1,9 +1,19 @@
 import sys #importa biblioteca que mexe nas funções e parâmetros do próprio Python.
 from ui.cli import show_main_menu, get_menu_choice, clear_screen #importa funções dos arquivos do próprio projeto.
+from config.database import DatabaseManager
 
 def main():
 #Estamos definindo o menu ao invés de escrever na raiz pois assim as variáveis não são criadas para todo o código.
 #é como se estivesse sido criado dentro de uma caixa segura, isso evita conflitos e bugs difíceis de achar.
+    DatabaseManager.initialize_pool(
+    host='localhost',
+    user='root',
+    password='',
+    database='hospital_management'
+    )
+
+    input('Pressione Enter para ir ao Menu Principal...')
+
     while True:
         show_main_menu()
         try: #é como se dissesse 'tente rodar o código normalmente'.
