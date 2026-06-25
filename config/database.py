@@ -1,9 +1,10 @@
-import sys
-import mysql.connector
-from mysql.connector import pooling
+import sys #importa biblioteca que mexe com o sistema operacional do PC
+import mysql.connector # Importa o driver oficial do MySQL, 'traduz' do python para MySQL
+from mysql.connector import pooling #importa especificamente o módulo para connection pool
 
-class DatabaseManager:
-    _pool = None
+class DatabaseManager: #Define classe do gerenciador do banco
+    _pool = None #declara a variável para guardar a connection pool, o '_' serve para avisar que 
+    #é uma variável privada, ninguém deve mexer nela de fora desse arquivo. Começa None porque ainda está vazia
 
     @classmethod
     def initialize_pool(cls, host='localhost', user='root', password='', database='hospital_management', pool_size=5):
